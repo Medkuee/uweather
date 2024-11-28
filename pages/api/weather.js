@@ -5,6 +5,7 @@ export default async function handler(req, res) {
   const apiKey = process.env.WEATHER_API_KEY;
 
   if (predefined) {
+    // const cities = ["Tokyo"];
     const cities = ["Ulaanbaatar", "Tokyo", "London", "Sydney", "Berlin"];
 
     try {
@@ -18,7 +19,8 @@ export default async function handler(req, res) {
         })
       );
       res.status(200).json(weatherData);
-    } catch {
+    } catch (error) {
+      console.log("error", error);
       res.status(500).json({ error: "Failed to fetch weather data." });
     }
     return;

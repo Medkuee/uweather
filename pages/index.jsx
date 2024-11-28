@@ -22,7 +22,7 @@ const validateCityName = (city) => {
 export default function Home({ initialCitiesWeather }) {
   const { globalState } = useGlobalState();
 
-  const [citiesWeather, setCitiesWeather] = useState(initialCitiesWeather);
+  const [citiesWeather, setCitiesWeather] = useState(initialCitiesWeather || []);
   const [additionalCitiesWeather, setAdditionalCitiesWeather] = useState([]);
   const [loading, setLoading] = useState(false);
 
